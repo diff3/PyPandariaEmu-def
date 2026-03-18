@@ -1,0 +1,6 @@
+# CMSG_PING - Done
+endian: little
+header:
+data:
+    ping_id: I
+    latency: I

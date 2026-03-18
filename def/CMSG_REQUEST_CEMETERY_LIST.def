@@ -1,0 +1,5 @@
+# CMSG_REQUEST_CEMETERY_LIST - Done
+# Empty marker packet
+endian: little
+header:
+data:

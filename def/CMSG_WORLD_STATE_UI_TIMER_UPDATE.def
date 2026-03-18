@@ -1,0 +1,5 @@
+# CMSG_WORLD_STATE_UI_TIMER_UPDATE - Done
+# Empty marker packet
+endian: little
+header:
+data:
