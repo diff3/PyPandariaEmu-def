@@ -1,0 +1,22 @@
+# Ignore cloned repos
+DSL/
+proxy/
+server/
+shared
+logs/
+.vscode
+capture/
+debug/
+json/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Env files (optional, om du inte vill committa .env)
+# .env
+
+# OS junk
+.DS_Store
+Thumbs.db
+docs
