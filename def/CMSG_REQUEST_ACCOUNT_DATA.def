@@ -1,0 +1,4 @@
+endian: little
+header:
+data:
+    type: bits, 3BI

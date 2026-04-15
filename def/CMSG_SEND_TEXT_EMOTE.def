@@ -3,4 +3,32 @@ endian: little
 header:
 data:
     emote_id: I
-    target_guid: Q
+    emote_num: I
+
+    target_guid_6_mask: bits, 1BI
+    target_guid_7_mask: bits, 1BI
+    target_guid_3_mask: bits, 1BI
+    target_guid_2_mask: bits, 1BI
+    target_guid_0_mask: bits, 1BI
+    target_guid_5_mask: bits, 1BI
+    target_guid_1_mask: bits, 1BI
+    target_guid_4_mask: bits, 1BI
+
+    if €target_guid_0_mask:
+        target_guid_0: B, YI
+    if €target_guid_5_mask:
+        target_guid_5: B, YI
+    if €target_guid_1_mask:
+        target_guid_1: B, YI
+    if €target_guid_4_mask:
+        target_guid_4: B, YI
+    if €target_guid_2_mask:
+        target_guid_2: B, YI
+    if €target_guid_3_mask:
+        target_guid_3: B, YI
+    if €target_guid_7_mask:
+        target_guid_7: B, YI
+    if €target_guid_6_mask:
+        target_guid_6: B, YI
+
+    target_guid: combine target_guid_mask

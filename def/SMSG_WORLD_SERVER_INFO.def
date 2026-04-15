@@ -1,8 +1,25 @@
-# SMSG_WORLD_SERVER_INFO - Done
-endian: little 
+# SMSG_WORLD_SERVER_INFO - SkyFire 5.4.8
+endian: little
 header:
 data:
+    has_group_size: bits, 1BI
+    ineligible_for_loot: bits, 1BI
+    has_restricted_level: bits, 1BI
+    has_restricted_money: bits, 1BI
+    flushbit
+
     is_tournament_realm: B
-    unk0: B
-    weekly_reset_time: I
-    flags: I
+    last_weekly_reset: I
+    map_difficulty: I
+
+    if €has_group_size:
+        group_size: I
+
+    if €has_restricted_level:
+        restricted_level: I
+
+    if €ineligible_for_loot:
+        encounter_mask: I
+
+    if €has_restricted_money:
+        restricted_money: I

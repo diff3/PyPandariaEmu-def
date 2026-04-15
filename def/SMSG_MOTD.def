@@ -1,6 +1,10 @@
-# SMSG_MOTD - raw line_count + null-terminated lines
+# SMSG_MOTD - SkyFire 5.4.8 bitpacked
 endian: little
 header:
 data:
-    line_count: I
-    lines_raw: R, r
+    line_count: bits, 4BI
+    loop €line_count to €lines_meta:
+        line_len: bits, 7BI
+    flushbit
+    loop €line_count to lines:
+        line: €lines_meta[i].line_len's

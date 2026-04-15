@@ -1,3 +1,12 @@
 endian: little
 header:
 data:
+    decompressed_size: I
+    timestamp: I
+    compressed_size: I
+
+    if €compressed_size:
+        uncompress zlib €compressed_size:
+            account_data_raw: R, r
+
+    type: bits, 3BI

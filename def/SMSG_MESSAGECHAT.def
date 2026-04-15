@@ -1,21 +1,175 @@
-# SMSG_MESSAGECHAT
+# SMSG_MESSAGECHAT - SkyFire 5.4.8 BuildChatPacket layout
 endian: little
 header:
 data:
-    type: B
-    language: I
-    sender_guid: Q
-    flags: I
+    no_sender_name: bits, 1BI
+    hide_in_chat_log: bits, 1BI
 
-    sender_name_len: B
-    sender_name: €sender_name_len's
+    if €no_sender_name == 0:
+        sender_name_len: bits, 11BI
 
-    target_guid: Q
+    reserved_bit_00: bits, 1BI
+    no_channel_name: bits, 1BI
+    reserved_bit_01: bits, 1BI
+    send_fake_time: bits, 1BI
+    no_chat_tag: bits, 1BI
+    realm_id_flag_00: bits, 1BI
 
-    target_name_len: B
-    target_name: €target_name_len's
+    group_guid_0_mask: bits, 1BI
+    group_guid_1_mask: bits, 1BI
+    group_guid_5_mask: bits, 1BI
+    group_guid_4_mask: bits, 1BI
+    group_guid_3_mask: bits, 1BI
+    group_guid_2_mask: bits, 1BI
+    group_guid_6_mask: bits, 1BI
+    group_guid_7_mask: bits, 1BI
 
-    message_len: H
-    message: €message_len's
+    if €no_chat_tag == 0:
+        chat_tag: bits, 9BI
 
-    chat_tag: B
+    reserved_bit_02: bits, 1BI
+
+    receiver_guid_7_mask: bits, 1BI
+    receiver_guid_6_mask: bits, 1BI
+    receiver_guid_1_mask: bits, 1BI
+    receiver_guid_4_mask: bits, 1BI
+    receiver_guid_0_mask: bits, 1BI
+    receiver_guid_2_mask: bits, 1BI
+    receiver_guid_3_mask: bits, 1BI
+    receiver_guid_5_mask: bits, 1BI
+
+    reserved_bit_03: bits, 1BI
+    no_language: bits, 1BI
+    no_prefix: bits, 1BI
+
+    sender_guid_0_mask: bits, 1BI
+    sender_guid_3_mask: bits, 1BI
+    sender_guid_7_mask: bits, 1BI
+    sender_guid_2_mask: bits, 1BI
+    sender_guid_1_mask: bits, 1BI
+    sender_guid_5_mask: bits, 1BI
+    sender_guid_4_mask: bits, 1BI
+    sender_guid_6_mask: bits, 1BI
+
+    no_achievement_id: bits, 1BI
+    no_message: bits, 1BI
+
+    if €no_channel_name == 0:
+        channel_name_len: bits, 7BI
+
+    if €no_message == 0:
+        message_len: bits, 12BI
+
+    no_receiver_name: bits, 1BI
+
+    if €no_prefix == 0:
+        addon_prefix_len: bits, 5BI
+
+    realm_id_flag_01: bits, 1BI
+
+    if €no_receiver_name == 0:
+        receiver_name_len: bits, 11BI
+
+    reserved_bit_04: bits, 1BI
+
+    guild_guid_2_mask: bits, 1BI
+    guild_guid_5_mask: bits, 1BI
+    guild_guid_7_mask: bits, 1BI
+    guild_guid_4_mask: bits, 1BI
+    guild_guid_0_mask: bits, 1BI
+    guild_guid_1_mask: bits, 1BI
+    guild_guid_3_mask: bits, 1BI
+    guild_guid_6_mask: bits, 1BI
+
+    flushbit
+
+    if €guild_guid_4_mask:
+        guild_guid_4: B
+    if €guild_guid_5_mask:
+        guild_guid_5: B
+    if €guild_guid_7_mask:
+        guild_guid_7: B
+    if €guild_guid_3_mask:
+        guild_guid_3: B
+    if €guild_guid_2_mask:
+        guild_guid_2: B
+    if €guild_guid_6_mask:
+        guild_guid_6: B
+    if €guild_guid_0_mask:
+        guild_guid_0: B
+    if €guild_guid_1_mask:
+        guild_guid_1: B
+
+    if €no_channel_name == 0:
+        channel_name: €channel_name_len's
+
+    if €no_prefix == 0:
+        addon_prefix: €addon_prefix_len's
+
+    if €sender_guid_4_mask:
+        sender_guid_4: B
+    if €sender_guid_7_mask:
+        sender_guid_7: B
+    if €sender_guid_1_mask:
+        sender_guid_1: B
+    if €sender_guid_5_mask:
+        sender_guid_5: B
+    if €sender_guid_0_mask:
+        sender_guid_0: B
+    if €sender_guid_6_mask:
+        sender_guid_6: B
+    if €sender_guid_2_mask:
+        sender_guid_2: B
+    if €sender_guid_3_mask:
+        sender_guid_3: B
+
+    chat_type: B
+
+    if €no_achievement_id == 0:
+        achievement_id: I
+
+    if €group_guid_1_mask:
+        group_guid_1: B
+    if €group_guid_3_mask:
+        group_guid_3: B
+    if €group_guid_4_mask:
+        group_guid_4: B
+    if €group_guid_6_mask:
+        group_guid_6: B
+    if €group_guid_0_mask:
+        group_guid_0: B
+    if €group_guid_2_mask:
+        group_guid_2: B
+    if €group_guid_5_mask:
+        group_guid_5: B
+    if €group_guid_7_mask:
+        group_guid_7: B
+
+    if €receiver_guid_2_mask:
+        receiver_guid_2: B
+    if €receiver_guid_5_mask:
+        receiver_guid_5: B
+    if €receiver_guid_3_mask:
+        receiver_guid_3: B
+    if €receiver_guid_6_mask:
+        receiver_guid_6: B
+    if €receiver_guid_7_mask:
+        receiver_guid_7: B
+    if €receiver_guid_4_mask:
+        receiver_guid_4: B
+    if €receiver_guid_1_mask:
+        receiver_guid_1: B
+    if €receiver_guid_0_mask:
+        receiver_guid_0: B
+
+    if €no_language == 0:
+        language: B
+
+    if €no_message == 0:
+        message: €message_len's
+
+    if €no_receiver_name == 0:
+        receiver_name: €receiver_name_len's
+
+    if €no_sender_name == 0:
+        sender_name: €sender_name_len's

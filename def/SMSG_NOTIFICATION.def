@@ -1,6 +1,7 @@
-# SMSG_NOTIFICATION
+# SMSG_NOTIFICATION - SkyFire 5.4.8 bitpacked
 endian: little
 header:
 data:
-    code: H
-    message: R, s
+    message_len: bits, 12BI
+    flushbit
+    message: €message_len's

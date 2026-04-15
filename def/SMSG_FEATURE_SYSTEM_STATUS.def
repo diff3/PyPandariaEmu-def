@@ -1,15 +1,32 @@
-# SMSG_FEATURE_SYSTEM_STATUS - Partial, needs testing
+# SMSG_FEATURE_SYSTEM_STATUS - SkyFire 5.4.8
 endian: little
 header:
 data:
-    voice:        I
-    browser:      I
-    scroll:       I
-    mountpreview: I
+    scroll_resurrection_per_day: I
+    scroll_resurrection_current: I
+    reserved_u32_08: I
+    mount_preview_mode: B
+    reserved_u32_0D: I
 
-    complaint1:   I
-    complaint2:   I
+    reserved_bit_00: bits, 1BI
+    in_game_shop_enabled: bits, 1BI
+    reserved_bit_02: bits, 1BI
+    recruit_a_friend_enabled: bits, 1BI
+    voice_chat_enabled: bits, 1BI
+    show_in_game_shop_icon: bits, 1BI
+    scroll_of_resurrection_enabled: bits, 1BI
+    excessive_warning: bits, 1BI
+    parental_controls_enabled: bits, 1BI
+    feedback_system_enabled: bits, 1BI
+    flushbit
 
-    flags1:       I
-    flags2:       I
-    flags3:       3B, I
+    if €excessive_warning:
+        excessive_warning_after_seconds: I
+        excessive_warning_display_seconds: I
+        excessive_warning_cooldown_seconds: I
+
+    if €feedback_system_enabled:
+        feedback_value_0: I
+        feedback_value_1: I
+        feedback_value_2: I
+        feedback_value_3: I

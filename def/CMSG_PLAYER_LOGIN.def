@@ -1,6 +1,46 @@
-# CMSG_PLAYER_LOGIN - Minimal retail-friendly decode
+# CMSG_PLAYER_LOGIN
+#
+# Pandaria 5.4.8 CharacterHandler.cpp:
+#   recvData >> unk;
+#   playerGuid[1] = recvData.ReadBit();
+#   playerGuid[4] = recvData.ReadBit();
+#   playerGuid[7] = recvData.ReadBit();
+#   playerGuid[3] = recvData.ReadBit();
+#   playerGuid[2] = recvData.ReadBit();
+#   playerGuid[6] = recvData.ReadBit();
+#   playerGuid[5] = recvData.ReadBit();
+#   playerGuid[0] = recvData.ReadBit();
+#   ReadByteSeq: 5,1,0,6,2,4,7,3
 endian: little
 header:
 data:
     unk_float: f
-    guid_blob: R, r
+
+    bitmask 8
+        guid_1_mask: bits, 1BI
+        guid_4_mask: bits, 1BI
+        guid_7_mask: bits, 1BI
+        guid_3_mask: bits, 1BI
+        guid_2_mask: bits, 1BI
+        guid_6_mask: bits, 1BI
+        guid_5_mask: bits, 1BI
+        guid_0_mask: bits, 1BI
+
+    if €guid_5_mask:
+        guid_5: B, YI
+    if €guid_1_mask:
+        guid_1: B, YI
+    if €guid_0_mask:
+        guid_0: B, YI
+    if €guid_6_mask:
+        guid_6: B, YI
+    if €guid_2_mask:
+        guid_2: B, YI
+    if €guid_4_mask:
+        guid_4: B, YI
+    if €guid_7_mask:
+        guid_7: B, YI
+    if €guid_3_mask:
+        guid_3: B, YI
+
+    guid: combine guid_mask

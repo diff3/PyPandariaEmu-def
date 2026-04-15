@@ -2,7 +2,8 @@
 endian: little
 header:
 data:
-    flag: B    
+    has_account_data_times: bits, 1BI
+    flushbit
     timestamps: 8I
-    mask: I       
+    mask: I
     server_time: I

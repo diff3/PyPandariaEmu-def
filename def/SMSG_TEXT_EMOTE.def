@@ -1,6 +1,61 @@
-# SMSG_TEXT_EMOTE – raw
+# SMSG_TEXT_EMOTE
 endian: little
 header:
 data:
-    _: 6B
-    raw: R, r
+    player_guid_1_mask: bits, 1BI
+    target_guid_7_mask: bits, 1BI
+    player_guid_6_mask: bits, 1BI
+    target_guid_5_mask: bits, 1BI
+    player_guid_3_mask: bits, 1BI
+    target_guid_6_mask: bits, 1BI
+    target_guid_2_mask: bits, 1BI
+    player_guid_7_mask: bits, 1BI
+    target_guid_0_mask: bits, 1BI
+    target_guid_1_mask: bits, 1BI
+    player_guid_4_mask: bits, 1BI
+    player_guid_2_mask: bits, 1BI
+    target_guid_3_mask: bits, 1BI
+    target_guid_4_mask: bits, 1BI
+    player_guid_0_mask: bits, 1BI
+    player_guid_5_mask: bits, 1BI
+
+    if €target_guid_2_mask:
+        target_guid_2: B, YI
+    if €target_guid_1_mask:
+        target_guid_1: B, YI
+    if €player_guid_7_mask:
+        player_guid_7: B, YI
+    if €player_guid_4_mask:
+        player_guid_4: B, YI
+    if €target_guid_7_mask:
+        target_guid_7: B, YI
+    if €player_guid_5_mask:
+        player_guid_5: B, YI
+    if €player_guid_2_mask:
+        player_guid_2: B, YI
+
+    text_emote: I
+
+    if €player_guid_6_mask:
+        player_guid_6: B, YI
+    if €target_guid_0_mask:
+        target_guid_0: B, YI
+    if €player_guid_3_mask:
+        player_guid_3: B, YI
+    if €player_guid_1_mask:
+        player_guid_1: B, YI
+    if €target_guid_6_mask:
+        target_guid_6: B, YI
+    if €player_guid_0_mask:
+        player_guid_0: B, YI
+    if €target_guid_3_mask:
+        target_guid_3: B, YI
+    if €target_guid_5_mask:
+        target_guid_5: B, YI
+    if €target_guid_4_mask:
+        target_guid_4: B, YI
+
+    emote_num: I
+
+    player_guid: combine player_guid_mask
+    target_guid: combine target_guid_mask

@@ -1,14 +1,13 @@
-# SMSG_INIT_WORLD_STATES – Partial, needs testing
+# SMSG_INIT_WORLD_STATES - SkyFire 5.4.8
 endian: little
 header:
 data:
     map_id: I
     zone_id: I
     area_id: I
-    _unk0: H  # verkar 0 i sniff
+    state_count: bits, 21BI
+    flushbit
 
-    loop until_end to states:
+    loop €state_count to states:
         value: I
         state_id: I
-
-    _: B

@@ -1,0 +1,39 @@
+# SMSG_UPDATE_ACTION_BUTTONS
+endian: little
+header:
+data:
+    loop 132 to mask_byte4:
+        value: bits, 1BI
+    loop 132 to mask_byte5:
+        value: bits, 1BI
+    loop 132 to mask_byte3:
+        value: bits, 1BI
+    loop 132 to mask_byte1:
+        value: bits, 1BI
+    loop 132 to mask_byte6:
+        value: bits, 1BI
+    loop 132 to mask_byte7:
+        value: bits, 1BI
+    loop 132 to mask_byte0:
+        value: bits, 1BI
+    loop 132 to mask_byte2:
+        value: bits, 1BI
+
+    loop 132 to byte0:
+        value: B, YI
+    loop 132 to byte1:
+        value: B, YI
+    loop 132 to byte4:
+        value: B, YI
+    loop 132 to byte6:
+        value: B, YI
+    loop 132 to byte7:
+        value: B, YI
+    loop 132 to byte2:
+        value: B, YI
+    loop 132 to byte5:
+        value: B, YI
+    loop 132 to byte3:
+        value: B, YI
+
+    state: B
