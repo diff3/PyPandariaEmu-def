@@ -1,0 +1,9 @@
+# SMSG_MOVE_SET_FLIGHT_SPEED
+endian: little
+header:
+data:
+    speed: f
+    counter: I
+    control_0: B
+    low_guid_xor: B
+    realm_guid_xor: B

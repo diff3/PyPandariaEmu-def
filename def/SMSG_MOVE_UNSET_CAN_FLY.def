@@ -1,0 +1,9 @@
+# SMSG_MOVE_UNSET_CAN_FLY
+endian: little
+header:
+data:
+    control_0: B
+    realm_guid_xor: B
+    control_2: B
+    padding 3
+    low_guid_xor: B

@@ -1,0 +1,9 @@
+# SMSG_MOVE_SET_SWIM_SPEED
+endian: little
+header:
+data:
+    control_0: B
+    counter: I
+    speed: f
+    realm_guid_xor: B
+    low_guid_xor: B

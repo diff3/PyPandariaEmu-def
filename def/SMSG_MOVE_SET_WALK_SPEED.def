@@ -1,0 +1,9 @@
+# SMSG_MOVE_SET_WALK_SPEED
+endian: little
+header:
+data:
+    control_0: B
+    counter: I
+    speed: f
+    low_guid_xor: B
+    realm_guid_xor: B
