@@ -1,0 +1,7 @@
+# CMSG_AUTOEQUIP_ITEM_SLOT
+# Runtime handler expects destination equipment slot plus item GUID.
+endian: little
+header:
+data:
+    slot: B
+    guid: packed_guid

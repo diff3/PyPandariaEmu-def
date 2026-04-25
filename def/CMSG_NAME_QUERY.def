@@ -1,0 +1,7 @@
+# CMSG_NAME_QUERY
+# Bit-packed GUID. Runtime handler decodes ctx.payload directly because
+# the mask/byte order is packet-specific and intentionally centralized there.
+endian: little
+header:
+data:
+    raw: R, r

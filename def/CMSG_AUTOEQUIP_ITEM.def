@@ -1,0 +1,7 @@
+# CMSG_AUTOEQUIP_ITEM
+endian: little
+header:
+data:
+    src_slot: B
+    src_bag: B
+    raw_tail: R, r

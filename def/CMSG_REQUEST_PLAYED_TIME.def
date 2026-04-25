@@ -1,0 +1,5 @@
+# CMSG_REQUEST_PLAYED_TIME
+endian: little
+header:
+data:
+    show_in_chat: B

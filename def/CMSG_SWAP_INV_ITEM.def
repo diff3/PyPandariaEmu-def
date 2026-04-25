@@ -1,0 +1,6 @@
+# CMSG_SWAP_INV_ITEM
+endian: little
+header:
+data:
+    src_slot: B
+    dst_slot: B

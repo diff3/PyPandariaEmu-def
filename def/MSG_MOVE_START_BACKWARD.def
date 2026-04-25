@@ -1,0 +1,6 @@
+# MSG_MOVE_START_BACKWARD
+# Raw capture only, decode handled by world movement parser.
+endian: little
+header:
+data:
+    raw: R, r

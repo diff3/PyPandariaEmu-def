@@ -1,0 +1,31 @@
+# GAMEOBJECT_CREATE
+# Dedicated GameObject create definition for the server-built bootstrap path.
+# Mirrors server.modules.handlers.world.bootstrap.gameobjects._build_gameobject_update_payload
+endian: little
+header:
+data:
+    map_id: H
+    update_count: I
+
+    update_type: B
+    guid: packed_guid
+    object_type: B
+    create_flag_0: B
+    create_flag_1: B
+    create_flag_2: B
+    create_flag_3: B
+    create_flag_4: B
+    create_flag_5: B
+
+    stationary_y: f
+    stationary_z: f
+    stationary_orientation: f
+    stationary_x: f
+
+    movement_block_uint32: I
+    gameobject_rotation_packed: Q
+
+    mask_blocks: B
+    mask: €mask_blocks*4's, K
+    fields: €mask's, V
+    dynamic_mask_blocks: B
